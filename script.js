@@ -298,3 +298,28 @@ envelope.addEventListener("click",()=>{
     },900);
 
 });
+// ===============================
+// Light Tilt Effect
+// ===============================
+
+document.addEventListener("mousemove",(e)=>{
+
+    if(!opened) return;
+
+    const x=(window.innerWidth/2-e.clientX)/35;
+
+    const y=(window.innerHeight/2-e.clientY)/35;
+
+    document.querySelector(".card").style.transform=
+    `translateY(-180px) rotateX(${y}deg) rotateY(${x}deg)`;
+
+});
+
+document.addEventListener("mouseleave",()=>{
+
+    if(!opened) return;
+
+    document.querySelector(".card").style.transform=
+    "translateY(-180px) rotateX(0deg) rotateY(0deg)";
+
+});
