@@ -191,3 +191,110 @@ window.onload=()=>{
     );
 
 };
+// ===============================
+// Typing Effect
+// ===============================
+
+const title = document.querySelector(".card h1");
+
+const originalText = title.innerText;
+
+title.innerText = "";
+
+function typeWriter(text, i = 0){
+
+    if(i < text.length){
+
+        title.innerHTML += text.charAt(i);
+
+        setTimeout(()=>{
+
+            typeWriter(text, i + 1);
+
+        },100);
+
+    }
+
+}
+
+// ===============================
+// Confetti
+// ===============================
+
+function confettiBurst(){
+
+    for(let i=0;i<80;i++){
+
+        const c = document.createElement("div");
+
+        c.className = "confetti";
+
+        c.style.left = (45 + Math.random()*10) + "%";
+
+        c.style.top = "45%";
+
+        c.style.background =
+
+        `hsl(${Math.random()*360},100%,65%)`;
+
+        c.style.transform =
+
+        `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(c);
+
+        const x = (Math.random()-0.5)*700;
+
+        const y = -(Math.random()*600+200);
+
+        c.animate([
+
+            {
+
+                transform:"translate(0,0)",
+
+                opacity:1
+
+            },
+
+            {
+
+                transform:`translate(${x}px,${y}px)`,
+
+                opacity:0
+
+            }
+
+        ],{
+
+            duration:2500,
+
+            easing:"ease-out"
+
+        });
+
+        setTimeout(()=>{
+
+            c.remove();
+
+        },2500);
+
+    }
+
+}
+
+// ===============================
+// Envelope Open Extra Animation
+// ===============================
+
+envelope.addEventListener("click",()=>{
+
+    setTimeout(()=>{
+
+        confettiBurst();
+
+        typeWriter(originalText);
+
+    },900);
+
+});
