@@ -1,0 +1,284 @@
+/*=========================
+Google Fonts
+=========================*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(135deg,#ff9ac6,#ffdde9,#ffd6f3,#ffe7f7);
+
+    font-family:'Poppins',sans-serif;
+}
+
+/*=========================
+Container
+=========================*/
+
+.container{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/*=========================
+Envelope
+=========================*/
+
+.envelope{
+
+    position:relative;
+
+    width:340px;
+    height:220px;
+
+    cursor:pointer;
+
+    transition:.8s;
+
+}
+
+/* Hover */
+
+.envelope:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.03);
+
+}
+
+/*=========================
+Back Body
+=========================*/
+
+.front{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:#ff6fa6;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.25);
+
+}
+
+/*=========================
+Top Flap
+=========================*/
+
+.flap{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:#ff8db9;
+
+    clip-path:polygon(0 0,100% 0,50% 60%);
+
+    transform-origin:top;
+
+    transition:1.2s;
+
+    z-index:4;
+
+}
+
+/*=========================
+OPEN
+=========================*/
+
+.open-text{
+
+    position:absolute;
+
+    width:100%;
+
+    text-align:center;
+
+    top:88px;
+
+    z-index:5;
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    text-shadow:
+
+    0 0 15px white,
+    0 0 30px gold;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+/*=========================
+Invitation Card
+=========================*/
+
+.card{
+
+    position:absolute;
+
+    left:20px;
+
+    bottom:0;
+
+    width:300px;
+    height:420px;
+
+    background:
+
+    rgba(255,255,255,.92);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+    0 15px 45px rgba(0,0,0,.2);
+
+    text-align:center;
+
+    padding:30px;
+
+    transform:translateY(180px);
+
+    transition:1.4s;
+
+    z-index:2;
+
+}
+
+/*=========================
+Card Text
+=========================*/
+
+.card h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:52px;
+
+    color:#ff2f72;
+
+}
+
+.card h2{
+
+    margin-top:25px;
+
+    color:#ff2f72;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:40px;
+
+}
+
+.card h3{
+
+    margin-top:5px;
+
+    color:#666;
+
+    font-weight:400;
+
+}
+
+.card p{
+
+    margin-top:18px;
+
+    color:#444;
+
+    line-height:1.7;
+
+}
+
+.card span{
+
+    color:#ff4d88;
+
+    font-weight:600;
+
+}
+
+.divider{
+
+    width:70%;
+
+    height:2px;
+
+    background:linear-gradient(
+    to right,
+    transparent,
+    #ff2f72,
+    transparent);
+
+    margin:18px auto;
+
+}
+
+small{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:#888;
+
+    font-style:italic;
+
+}
+
+/*=========================
+Open Animation
+=========================*/
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+.envelope.open .card{
+
+    transform:translateY(-170px);
+
+}
