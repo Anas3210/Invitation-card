@@ -779,3 +779,148 @@ Confetti
     z-index:9999;
 
 }
+/*=====================================
+3D Perspective
+=====================================*/
+
+.container{
+
+    perspective:1800px;
+
+}
+
+.envelope{
+
+    transform-style:preserve-3d;
+
+    transition:1.2s cubic-bezier(.23,1,.32,1);
+
+}
+
+/*=====================================
+Realistic Shadow
+=====================================*/
+
+.envelope::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-35px;
+
+    width:240px;
+
+    height:35px;
+
+    transform:translateX(-50%);
+
+    background:rgba(0,0,0,.22);
+
+    filter:blur(18px);
+
+    border-radius:50%;
+
+    animation:shadowMove 4s ease-in-out infinite;
+
+}
+
+@keyframes shadowMove{
+
+    0%,100%{
+
+        transform:translateX(-50%) scale(1);
+
+        opacity:.30;
+
+    }
+
+    50%{
+
+        transform:translateX(-50%) scale(.82);
+
+        opacity:.18;
+
+    }
+
+}
+
+/*=====================================
+Luxury Background
+=====================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.45),
+    transparent 45%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,215,0,.15),
+    transparent 50%);
+
+    pointer-events:none;
+
+}
+
+/*=====================================
+Glass Reflection
+=====================================*/
+
+.front::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:12px;
+
+    left:15px;
+
+    width:45%;
+
+    height:12px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.35);
+
+    filter:blur(4px);
+
+}
+
+/*=====================================
+Card Texture
+=====================================*/
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:20px;
+
+    background-image:
+
+    radial-gradient(rgba(0,0,0,.025) 1px, transparent 1px);
+
+    background-size:8px 8px;
+
+    opacity:.35;
+
+    pointer-events:none;
+
+}
