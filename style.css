@@ -760,3 +760,22 @@ Sweety Glow
     }
 
 }
+/*=========================
+Confetti
+=========================*/
+
+.confetti{
+
+    position:fixed;
+
+    width:10px;
+
+    height:16px;
+
+    border-radius:2px;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
